@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: Test
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.021 s <<< FAILURE! - in Test
+initializationError(Test)  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.Exception: Method test1 should have no parameters
+
