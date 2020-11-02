@@ -1,4 +1,5 @@
-﻿##  前言
+﻿@[toc]
+##  前言
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;谈起spring，Aop当然是其中的重中之重。本文简要讲解Aop理论知识，以及根据demo着重讲解Aspectj的基本用法。spring Aop 的语法这里不作介绍。
 ##  Aop是什么？
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aop是面向切面编程，它通过动态代理的方式为程序添加统一的功能，集中解决一些公共问题。如日志处理，事务控制等等。
@@ -352,6 +353,34 @@ public class TestDemo {
     }
 }
 ```
+##  其他知识点
+1.Introductions中 @DeclareParents：为目标类手动的添加其他接口功能的实现方法。
+用法参考博文：[https://blog.csdn.net/u010502101/article/details/76944753](https://blog.csdn.net/u010502101/article/details/76944753)
+
+官网介绍：
+
+您可以使用@DeclareParents注释进行介绍。此注释用于声明匹配类型有一个新的父类(因此得名)。例如，给定一个名为UsageTracked的接口和该接口的一个名为DefaultUsageTracked的实现，下面的方面声明所有服务接口的实现者也都实现了UsageTracked接口(例如通过JMX公开统计数据):
+
+```
+@Aspect
+public class UsageTracking {
+
+    @DeclareParents(value="com.xzy.myapp.service.*+", defaultImpl=DefaultUsageTracked.class)
+    public static UsageTracked mixin;
+
+    @Before("com.xyz.myapp.CommonPointcuts.businessService() && this(usageTracked)")
+    public void recordUsage(UsageTracked usageTracked) {
+        usageTracked.incrementUseCount();
+    }
+
+}
+```
+
+```
+UsageTracked usageTracked = (UsageTracked) context.getBean("myService");
+```
+
+ 2.Aspect Instantiation Models中  @AspectJ("perthis(com.demo.xxx)")：perthis指定包名xxx下的所有类添加同一个切面。默认AspectJ切面是单例的，Aspect Instantiation Models不是单例
 ##  总结
 1.cglib是通过继承来操作子类的字节码生成代理类
 2.JDK是通过接口,然后利用java反射完成对类的动态创建
