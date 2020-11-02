@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestDemo
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.409 s <<< FAILURE! - in TestDemo
+test1(TestDemo)  Time elapsed: 0.392 s  <<< ERROR!
+org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'UserDaoImpl' available
+	at TestDemo.test1(TestDemo.java:11)
+
