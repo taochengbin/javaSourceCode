@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: org.example.TestProxy
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.005 s <<< FAILURE! - in org.example.TestProxy
+test(org.example.TestProxy)  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.NullPointerException
+	at org.example.TestProxy.test(TestProxy.java:13)
+
