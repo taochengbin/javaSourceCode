@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: Test
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.376 s <<< FAILURE! - in Test
+test(Test)  Time elapsed: 0.358 s  <<< ERROR!
+org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'UserFactoryBean' is defined
+	at Test.test(Test.java:10)
+
